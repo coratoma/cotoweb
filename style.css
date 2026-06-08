@@ -14,6 +14,21 @@
     box-sizing: border-box;
 }
 
+header {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center; /* 추가: 박스 안의 요소를 중앙 정렬 */
+}
+
+/* 홈 화면 로고 이미지 */
+.logo {
+    width: 120px; /* 기존 150px에서 20% 줄인 크기 */
+    height: auto;
+    display: block; /* 추가: 이미지를 블록 요소로 만듦 */
+    margin: 0 auto; /* 추가: 좌우 여백을 자동으로 맞춰 완벽한 정중앙 배치 */
+}
+
 .row {
     display: flex;
     gap: 15px; /* 좌우 간격 */
