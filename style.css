@@ -23,7 +23,7 @@ header {
 
 /* 홈 화면 로고 이미지 */
 .logo {
-    width: 140px; /* 기존 150px에서 20% 줄인 크기 */
+    width: 150px; /* 기존 150px에서 20% 줄인 크기 */
     height: auto;
     display: block; /* 추가: 이미지를 블록 요소로 만듦 */
     margin: 0 auto; /* 추가: 좌우 여백을 자동으로 맞춰 완벽한 정중앙 배치 */
@@ -146,7 +146,7 @@ footer {
     max-width: 500px; /* 모바일 비율 유지 */
     display: flex;
     flex-direction: column;
-    gap: 40px; /* 💡 여기서 이미지 간격을 임의로 수정하세요! (예: 20px, 60px 등) */
+    gap: 20; /* 💡 여기서 이미지 간격을 임의로 수정하세요! (예: 20px, 60px 등) */
     padding: 0 20px 60px 20px; /* 하단 여백을 넉넉히 줌 */
     box-sizing: border-box;
 }
