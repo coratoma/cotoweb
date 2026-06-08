@@ -23,7 +23,7 @@ header {
 
 /* 홈 화면 로고 이미지 */
 .logo {
-    width: 150px; /* 기존 150px에서 20% 줄인 크기 */
+    width: 200px; /* 기존 150px에서 20% 줄인 크기 */
     height: auto;
     display: block; /* 추가: 이미지를 블록 요소로 만듦 */
     margin: 0 auto; /* 추가: 좌우 여백을 자동으로 맞춰 완벽한 정중앙 배치 */
