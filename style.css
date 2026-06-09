@@ -1,6 +1,32 @@
-/* style.css */
+/* 기본 초기화 및 배경 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black; /* 배경을 검은색으로 고정 */
+    color: white; /* 기본 글자색을 흰색으로 고정 */
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
 
-/* ... (이전 코드의 body, header, .logo 부분은 그대로 유지) ... */
+/* 상단 로고 컨테이너 (홈 화면) */
+header {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* 홈 화면 로고 이미지 */
+.logo {
+    width: 400px; /* 원하시는 크기에 맞게 조절 가능 */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
 /* 갤러리 영역 (모바일 최적화) */
 .gallery {
@@ -14,21 +40,6 @@
     box-sizing: border-box;
 }
 
-header {
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    text-align: center; /* 추가: 박스 안의 요소를 중앙 정렬 */
-}
-
-/* 홈 화면 로고 이미지 */
-.logo {
-    width: 400px; /* 기존 150px에서 20% 줄인 크기 */
-    height: auto;
-    display: block; /* 추가: 이미지를 블록 요소로 만듦 */
-    margin: 0 auto; /* 추가: 좌우 여백을 자동으로 맞춰 완벽한 정중앙 배치 */
-}
-
 .row {
     display: flex;
     gap: 15px; /* 좌우 간격 */
@@ -39,23 +50,20 @@ header {
     justify-content: center;
 }
 
-/* 이미지 링크 컨테이너 - 정방형(1:1) 비율로 변경 */
+/* 이미지 링크 컨테이너 - 정방형(1:1) 비율 */
 .photo-link {
     display: block;
     border: 2px solid white;
     border-radius: 4px;
     overflow: hidden;
     flex: 1;
-    /* --- 수정된 부분: aspect-ratio를 1/1로 설정 --- */
     aspect-ratio: 1 / 1; 
-    /* ------------------------------------------------ */
 }
 
 /* 아래쪽 이미지는 위쪽 이미지 1개와 동일한 너비를 가지도록 설정 */
 .bottom-row .photo-link {
     flex: none;
     width: calc(50% - 7.5px);
-    /* 아래쪽 이미지도 정방형으로 유지하기 위해 추가 */
     aspect-ratio: 1 / 1;
 }
 
@@ -64,26 +72,41 @@ header {
     width: 100%;
     height: 100%;
     display: block;
-    /* aspect-ratio: 4 / 5; */ /* --- 이 줄은 제거하거나 주석 처리합니다.
-                                         컨테이너(.photo-link)에 이미 정방형을 설정했으므로,
-                                         여기서는 object-fit만 중요합니다. --- */
-    object-fit: cover; /* 찌그러짐 없이 이미지를 틀 안에 꽉 채웁니다 */
+    object-fit: cover;
 }
+
+/* 홈 화면 STATEMENT 버튼 (하늘색 상자) */
+.statement-btn {
+    display: block;
+    width: 100%;
+    background-color: #01d3fe; /* 하늘색 배경 */
+    color: white; /* 흰색 글자 */
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 5px; /* 이미지와의 간격 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 /* 하단 통통 튀는 텍스트 영역 */
 footer {
     width: 100%;
-    text-align: center; /* 텍스트가 무조건 중앙에 오도록 고정 */
+    text-align: center;
     margin-top: 30px;
     margin-bottom: 40px;
 }
 
 .bouncing-text {
-    font-size: 1.5rem; /* 글자 크기 확대 (원하는 만큼 숫자 조절 가능) */
+    font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0; /* 불필요한 여백 제거 */
-    display: inline-block; /* 애니메이션이 텍스트에만 정확히 적용되게 만듦 */
-    animation: bounce 0.6s infinite alternate cubic-bezier(0.5, 0.05, 1, 0.5); /* 통통 튀는 모션 부활 */
+    margin: 0;
+    display: inline-block;
+    color: white;
+    animation: bounce 0.6s infinite alternate cubic-bezier(0.5, 0.05, 1, 0.5);
 }
 
 /* 애니메이션 키프레임 */
@@ -92,11 +115,12 @@ footer {
         transform: translateY(0);
     }
     to {
-        transform: translateY(-15px); /* 위로 얼마나 튀어오를지 결정 */
+        transform: translateY(-15px);
     }
 }
+
 /* ========================================= */
-/* 상세 페이지 (Detail Page) 스타일 시작 */
+/* 상세 페이지 및 STATEMENT 페이지 스타일 */
 /* ========================================= */
 
 /* 상단 헤더 영역 (좌측 아이콘, 중앙 로고) */
@@ -108,17 +132,16 @@ footer {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    /* 홈 화면의 margin-top 설정을 덮어쓰기 위해 초기화 */
     margin-top: 0; 
     margin-bottom: 20px;
 }
 
 /* 좌측 상단 표지 이미지 아이콘 */
 .header-icon {
-    width: 40px; /* 아이콘 크기 */
+    width: 40px;
     height: 40px;
     object-fit: cover;
-    border-radius: 4px; /* 살짝 둥근 모서리 */
+    border-radius: 4px;
 }
 
 /* 중앙 로고 컨테이너 */
@@ -131,8 +154,8 @@ footer {
 
 /* 중앙 로고 이미지 크기 조절 */
 .detail-logo {
-    height: 150px; /* 헤더에 맞게 로고 크기 축소 */
-    width: auto;
+    width: 150px;
+    height: auto;
 }
 
 /* 좌측 아이콘과 동일한 너비를 주어 로고가 완벽하게 중앙에 오도록 맞춤 */
@@ -143,55 +166,36 @@ footer {
 /* 디테일 이미지 나열 영역 */
 .detail-content {
     width: 100%;
-    max-width: 500px; /* 모바일 비율 유지 */
+    max-width: 500px;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* 💡 여기서 이미지 간격을 임의로 수정하세요! (예: 20px, 60px 등) */
-    padding: 0 20px 60px 20px; /* 하단 여백을 넉넉히 줌 */
+    gap: 20px;
+    padding: 0 20px 60px 20px;
     box-sizing: border-box;
 }
 
 /* 개별 디테일 이미지 설정 */
 .detail-content img {
     width: 100%;
-    height: auto; /* 원본 비율에 맞게 세로 길이 자동 조절 */
+    height: auto;
     display: block;
-    border-radius: 4px; /* 필요 없다면 이 줄을 지우시면 됩니다 */
-}
-/* ========================================= */
-/* STATEMENT 버튼 및 페이지 스타일 */
-/* ========================================= */
-
-/* 홈 화면 STATEMENT 버튼 */
-.statement-btn {
-    display: block;
-    width: 100%;
-    background-color: #01d3fe;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 5px; /* 이미지와의 간격 */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
     border-radius: 4px;
-    box-sizing: border-box;
 }
 
 /* STATEMENT 페이지 텍스트 영역 */
 .statement-content {
-    width: 80%;
+    width: 100%;
     max-width: 500px;
     padding: 0 20px 60px 20px;
     box-sizing: border-box;
-    text-align: center; /* 텍스트 중앙 정렬 */
-    line-height: 1.7; /* 읽기 편하게 줄 간격 넉넉히 */
-    font-size: 0.85rem;
-    word-break: keep-all; /* 단어 단위로 깔끔하게 줄바꿈 */
+    text-align: center;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    word-break: keep-all;
     margin: 0 auto;
+    color: white;
 }
 
-/* 문단(p) 사이의 여백 */
 .statement-content p {
     margin-bottom: 25px;
 }
